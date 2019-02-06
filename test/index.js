@@ -22,8 +22,17 @@ var secretMessage = "%WgVG9T2IryRoPMCQk7znuMt2Cmo/shgnrbn0wY6gc3M=.sha256?unbox=
 
 var msg_id = '%YPqekTHlErYzPzzonLC29mrkofpPDuQbUh+DgQYD6H4=.sha256'
 
+var feedId = '@gYCJpN4eGDjHFnWW2Fcusj8O4QYbVDUW6rNYh7nNEnc=.ed25519'
+var feedId_secp = '@gYCJpN4eGDjHFnWW2Fcusj8O4QYbVDUW6rNYh7nNEnc=.secp256k1'
+
 var R = require('../')
 var tape = require('tape')
+
+tape('feed', (t) => {
+  t.ok(R.isFeed(feedId))
+  t.ok(R.isFeed(feedId_secp))
+  t.end()
+})
 
 tape('msg', function (t) {
   t.ok(R.isMsg(msg_id))

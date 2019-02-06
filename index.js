@@ -5,7 +5,7 @@ var ip = require('ip')
 
 var parseLinkRegex = /^((@|%|&)[A-Za-z0-9\/+]{43}=\.[\w\d]+)(\?(.+))?$/
 var linkRegex = exports.linkRegex = /^(@|%|&)[A-Za-z0-9\/+]{43}=\.[\w\d]+$/
-var feedIdRegex = exports.feedIdRegex = isCanonicalBase64('@', '\.(?:sha256|ed25519)', 32)
+var feedIdRegex = exports.feedIdRegex = isCanonicalBase64('@', '\.(?:secp256k1|ed25519)')
 var blobIdRegex = exports.blobIdRegex = isCanonicalBase64('&', '\.sha256', 32)
 var msgIdRegex = exports.msgIdRegex = isCanonicalBase64('%', '\.sha256', 32)
 
